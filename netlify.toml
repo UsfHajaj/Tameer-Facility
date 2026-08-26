@@ -1,0 +1,64 @@
+# Netlify configuration file for Tameer Facilities website
+
+[build]
+  # مجلد النشر
+  publish = "."
+  
+  # أوامر البناء (غير مطلوبة للمواقع الثابتة)
+  command = "echo 'Building Tameer Facilities website...'"
+
+[[headers]]
+  # تطبيق على جميع الملفات
+  for = "/*"
+  [headers.values]
+    # دعم اللغة العربية والترميز UTF-8
+    Content-Language = "ar"
+    Cache-Control = "public, max-age=3600"
+    # رؤوس الأمان
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    
+[[headers]]
+  # تطبيق على ملفات CSS و JS
+  for = "*.{js,css}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  # تطبيق على الصور
+  for = "*.{jpg,jpeg,png,gif,svg,webp}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# إعدادات إعادة التوجيه
+[[redirects]]
+  from = "/home"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/main"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/communication-complaints.html"
+  status = 200
+
+# توجيه 404 للصفحة الرئيسية مع إرجاع كود 404 الصحيح
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# إعدادات أمان إضافية
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"

@@ -1,0 +1,6 @@
+name = "tameer-facilities"
+compatibility_date = "2026-07-17"
+
+# موقع ثابت — Cloudflare Pages
+# النشر: npx wrangler pages deploy . --project-name=tameer-facilities
+# اللينك المتوقع: https://tameer-facilities.pages.dev
