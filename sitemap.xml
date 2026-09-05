@@ -114,6 +114,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!--
+  <url>
+    <loc>https://tameer-facility.com/project_t_square.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
   <url>
     <loc>https://tameer-facility.com/road_cleaning_maintenance.html</loc>
     <lastmod>2026-08-26</lastmod>
